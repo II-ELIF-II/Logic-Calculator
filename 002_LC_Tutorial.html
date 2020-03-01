@@ -1,0 +1,725 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="Scripts/Logic_Calculator_Style_Content.css">
+        <script type="text/javascript" src="Scripts/Logic_Calculator_JQuery.js"></script>
+        <script type="text/javascript" src="Scripts/Logic_Calculator_Script.js"></script>
+    </head>
+    <body class="body-content">
+        <div class="grid-container">
+            <div></div>
+            <div class="body-container">
+                <div class="header">
+                    <div class="header-title">TUTORIAL</div>
+                </div>
+                <div class="body">
+                    <div class="body-header">
+                        <div class="body-header-text">
+                            PROPOSITONAL LOGIC
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        <table border="1px">
+                            <tr>
+                                <th style="width: 30%">TABLE OF CONTENTS</th>
+                                <td rowspan="2" style="text-align: justify; padding: 2vw;">
+                                    The rules of mathematical logic specify methods of reasoning mathematical statements. Greek philosopher, <mark>Aristotle, was the pioneer of logical reasoning.</mark> Logical reasoning provides the theoretical base for many areas of mathematics and consequently computer science. 
+                                    <br>
+                                    <br>
+                                    It has many practical applications in computer science like design of computing machines, artificial intelligence, definition of data structures for programming languages etc.
+                                    <br>
+                                    <br>
+                                    <mark>Propositional Logic</mark> is concerned with statements to which the truth values, <mark>“true” and “false”</mark>, can be assigned. The purpose is to analyze these statements either individually or in a composite manner.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0; vertical-align: top;">
+                                    <ol class="toc" type="1">
+                                        <li><a class="toc-link" href="#DEFINITION">DEFINITION</a></li>
+                                        <li><a class="toc-link" href="#CONNECTIVES">CONNECTIVES</a></li>
+                                        <li><a class="toc-link" href="#TAUTOLOGIES">TAUTOLOGIES</a></li>
+                                        <li><a class="toc-link" href="#CONTRADICTIONS">CONTRADICTIONS</a></li>
+                                        <li><a class="toc-link" href="#CONTINGENCY">CONTINGENCY</a></li>
+                                        <li><a class="toc-link" href="#PROPOSITIONAL">PROPOSITIONAL EQUIVALENCES</a></li>
+                                        <li><a class="toc-link" href="#INVERSE">INVERSE, CONVERSE, AND CONTRA-POSITIVE</a></li>
+                                        <li><a class="toc-link" href="#DUALITY">DUALITY PRINCIPLE</a></li>
+                                        <li><a class="toc-link" href="#NORMAL">NORMAL FORMS</a></li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="DEFINITION">
+                            DEFINITION
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        A proposition is <mark>a collection of declarative statements that has either a truth value "true” or a truth value "false".</mark> A propositional consists of propositional variables and connectives. We denote the propositional variables by capital letters (A, B, etc). The connectives connect the propositional variables.
+                        <br>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th colspan="2">Some examples of Propositions are given below</th>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%;">"Man is Mortal"</td>
+                                <td>it returns truth value “TRUE”</td>
+                            </tr>
+                            <tr>
+                                <td>"12 + 9 = 3 – 2"</td>
+                                <td>it returns truth value “FALSE”</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">The following is not a Proposition</th>
+                            </tr>
+                            <tr>
+                                <td>"A is less than 2"</td>
+                                <td>It is because unless we give a specific value of A, we cannot say whether the statement is true or false.</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="CONNECTIVES">
+                            CONNECTIVES
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        <table border="1px">
+                            <tr>
+                                <th>In propositional logic generally we use five connectives which are</th>
+                            </tr>
+                            <tr>
+                                <td>OR (V)</td>
+                            </tr>
+                            <tr>
+                                <td>AND (^)</td>
+                            </tr>
+                            <tr>
+                                <td>Negation / NOT (~)</td>
+                            </tr>
+                            <tr>
+                                <td>Implication / if-then (→)</td>
+                            </tr>
+                            <tr>
+                                <td>If and only if (⇔).</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th>OR (∨)</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;">
+                                    The <mark>OR operation</mark> of two propositions A and B (written as A ∨ B) is true if at least any of the propositional variable A or B is true.
+                                    <br>
+                                    <br>
+                                    The truth table is as follows:
+                                    <br>
+                                    <br>
+                                    <table border="1px">
+                                        <tr>
+                                            <th>A</th>
+                                            <th>B</th>
+                                            <th>A ∨ B</th>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>True</td>
+                                            <td>True</td>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>False</td>
+                                            <td>True</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>True</td>
+                                            <td>True</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>False</td>
+                                            <td>False</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th>AND (∧)</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;">
+                                    The <mark>AND operation</mark> of two propositions A and B (written as A ∧ B) is true if both the propositional variable A and B is true.
+                                    <br>
+                                    <br>
+                                    The truth table is as follows:
+                                    <br>
+                                    <br>
+                                    <table border="1px">
+                                        <tr>
+                                            <th>A</th>
+                                            <th>B</th>
+                                            <th>A ∧ B</th>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>True</td>
+                                            <td>True</td>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>False</td>
+                                            <td>False</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>True</td>
+                                            <td>False</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>False</td>
+                                            <td>False</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th>Negation ( ~ / ¬ )</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;">
+                                    The <mark>negation of a proposition </mark> A ( written as ¬A or ~A ) is false when A is true and is true when A is false.
+                                    <br>
+                                    <br>
+                                    The truth table is as follows:
+                                    <br>
+                                    <br>
+                                    <table border="1px">
+                                        <tr>
+                                            <th>A</th>
+                                            <th>~ A</th>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>False</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>True</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th>Implication / if-then ( → )</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;">
+                                    An <mark>implication A → B is the proposition</mark> “if A, then B”. It is false if A is true and B is false. The rest cases are true.
+                                    <br>
+                                    <br>
+                                    The truth table is as follows:
+                                    <br>
+                                    <br>
+                                    <table border="1px">
+                                        <tr>
+                                            <th>A</th>
+                                            <th>B</th>
+                                            <th>A → B</th>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>True</td>
+                                            <td>True</td>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>False</td>
+                                            <td>False</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>True</td>
+                                            <td>True</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>False</td>
+                                            <td>True</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th>If and only if ( ⇔ )</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;">
+                                    <mark>A ⇔ B  is bi-conditional</mark> logical connective which is true when p and q are same, i.e. both are false or both are true.
+                                    <br>
+                                    <br>
+                                    The truth table is as follows:
+                                    <br>
+                                    <br>
+                                    <table border="1px">
+                                        <tr>
+                                            <th>A</th>
+                                            <th>B</th>
+                                            <th>A ⇔ B</th>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>True</td>
+                                            <td>True</td>
+                                        </tr>
+                                        <tr>
+                                            <td>True</td>
+                                            <td>False</td>
+                                            <td>False</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>True</td>
+                                            <td>False</td>
+                                        </tr>
+                                        <tr>
+                                            <td>False</td>
+                                            <td>False</td>
+                                            <td>True</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="TAUTOLOGIES">
+                            TAUTOLOGIES
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        A Tautology is a formula which is always <mark>true for every value</mark> of its propositional variables.
+                        <br>
+                        <br>
+                        <mark>Example</mark> − Prove [(A→B)∧A]→B is a tautology:
+                        <br>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>A→B</th>
+                                <th>(A→B)∧A</th>
+                                <th>[(A→B)∧A]→B</th>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                        </table>
+                        <br>
+                        As we can see every value of <mark>[(A→B)∧A]→B</mark> is "True", <mark>it is a tautology.</mark>
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="CONTRADICTIONS">
+                            CONTRADICTIONS
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        A Contradiction is a formula which is <mark>always false for every value</mark> of its propositional variables.
+                        <br>
+                        <br>
+                        <mark>Example</mark> − Prove <mark>(A∨B)∧[(¬A)∧(¬B)]</mark> is a contradiction
+                        <br>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>A∨B</th>
+                                <th>¬A</th>
+                                <th>¬B</th>
+                                <th>(¬A)∧(¬B)</th>
+                                <th>(A∨B)∧[(¬A)∧(¬B)]</th>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                        </table>
+                        <br>
+                        As we can see every value of <mark>(A∨B)∧[(¬A)∧(¬B)]</mark> is “False”, <mark>it is a contradiction.</mark>
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="CONTINGENCY">
+                            CONTINGENCY
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        A Contingency is a formula which has <mark>both some true and some false values</mark> for every value of its propositional variables.
+                        <br>
+                        <br>
+                        <mark>Example</mark> − Prove <mark>(A∨B)∧(¬A)</mark> a contingency
+                        <br>
+                        <br>
+                        <table  border="1px">
+                            <tr>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>A∨B</th>
+                                <th>¬A</th>
+                                <th>(A∨B)∧(¬A)</th>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                        </table>
+                        <br>
+                        As we can see every value of <mark>(A∨B)∧(¬A)</mark> has <mark>both “True” and “False”, it is a contingency.</mark>
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="PROPOSITIONAL">
+                            PROPOSITIONAL EQUIVALENCES
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        Two statements X and Y are <mark>logically equivalent</mark> if any of the following two conditions hold:
+                        <ul style="list-style-type: square; padding-left: 5vh;">
+                            <li>The truth tables of each statement have the same truth values.</li>
+                            <li>The bi-conditional statement X⇔Y is a tautology.</li>
+                        </ul>
+                        <mark>Example</mark> − Prove <mark>¬(A∨B)and[(¬A)∧(¬B)]</mark> are equivalent
+                        <br>
+                        <br>
+                        <mark>Testing by 1st method (Matching truth table)</mark>
+                        <br>
+                        <br>
+                        <table border="1px">
+                            <tr>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>A∨B</th>
+                                <th>¬(A∨B)</th>
+                                <th>¬A</th>
+                                <th>¬B</th>
+                                <th>[(¬A)∧(¬B)]</th>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                        </table>
+                        <br>
+                        Here, we can see the truth values of <mark>¬(A∨B)and[(¬A)∧(¬B)]</mark> are same, hence the statements are equivalent.
+                        <br>
+                        <br>
+                        <mark>Testing by 2nd method (Bi-conditionality)</mark>
+                        <br>
+                        <br>
+                        <table  border="1px">
+                            <tr>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>¬(A∨B)</th>
+                                <th>[(¬A)∧(¬B)]</th>
+                                <th>[¬(A∨B)]⇔[(¬A)∧(¬B)]</th>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                        </table>
+                        <br>
+                        As <mark>[¬(A∨B)]⇔[(¬A)∧(¬B)]</mark> is a tautology, the statements are equivalent.
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="INVERSE">
+                            INVERSE, CONVERSE, AND CONTRA-POSITIVE
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        Implication / if-then (→) is also called a <mark>conditional statement.</mark> It has two parts:
+                        <ul style="list-style-type: square; padding-left: 5vh;">
+                            <li>Hypothesis, p</li>
+                            <li>Conclusion, q</li>
+                        </ul>
+                        As mentioned earlier, it is denoted as p→q.
+                        <br>
+                        <br>
+                        <mark>Example of Conditional Statement</mark> − “If you do your homework, you will not be punished.” Here, "you do your homework" is the hypothesis, p, and "you will not be punished" is the conclusion, q.
+                        <br>
+                        <br>
+                        <table  border="1px">
+                            <tr>
+                                <th colspan="2">Inverse</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    An inverse of the conditional statement is <mark>the negation of both the hypothesis and the conclusion.</mark> If the statement is “If p, then q”, the inverse will be “If not p, then not q”. Thus the inverse of p→q is ¬p→¬q.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>EXAMPLE</th>
+                                <td>
+                                    The inverse of “If you do your homework, you will not be punished” is “If you do not do your homework, you will be punished.”
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table  border="1px">
+                            <tr>
+                                <th colspan="2">Converse</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    The converse of the conditional statement is computed by <mark>interchanging the hypothesis and the conclusion.</mark>mark> If the statement is “If p, then q”, the converse will be “If q, then p”. The converse of p→q is q→p.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>EXAMPLE</th>
+                                <td>
+                                    The converse of "If you do your homework, you will not be punished" is "If you will not be punished, you do your homework”.
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table  border="1px">
+                            <tr>
+                                <th colspan="2">Contra-positive</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    The contra-positive of the conditional is computed by <mark>interchanging the hypothesis and the conclusion of the inverse statement.</mark>mark> If the statement is “If p, then q”, the contra-positive will be “If not q, then not p”. The contra-positive of p→q is ¬q→¬p.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>EXAMPLE</th>
+                                <td>
+                                    The Contra-positive of " If you do your homework, you will not be punished” is "If you are punished, you did not do your homework”.
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="DUALITY">
+                            DUALITY PRINCIPLE
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        <mark>Duality principle</mark> states that for any true statement, the dual statement obtained by interchanging unions into intersections (and vice versa) and interchanging Universal set into Null set (and vice versa) is also true. If dual of any statement is the statement itself, it is said self-dual statement.
+                        <br>
+                        <br>
+                        <mark>Example</mark> − The dual of (A∩B)∪C is  (A∪B)∩C
+                    </div>
+                    <div class="body-header">
+                        <div class="body-header-text" id="NORMAL">
+                            NORMAL FORMS
+                        </div>
+                    </div>
+                    <div class="body-text">
+                        We can convert any proposition in two normal forms:
+                        <ul style="list-style-type: square; padding-left: 5vh;">
+                            <li>Conjunctive normal form</li>
+                            <li>Disjunctive normal form</li>
+                        </ul>
+                        <table  border="1px">
+                            <tr>
+                                <th colspan="2">Conjunctive Normal Form</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    A compound statement is in conjunctive normal form if it is obtained by operating AND among variables (negation of variables included) connected with ORs. In terms of set operations, it is a compound statement obtained by Intersection among variables connected with Unions.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>EXAMPLE</th>
+                                <td style="text-align: left; padding-bottom: 0; padding-top: 2.5vh;">
+                                    <ul style="list-style-type: square; padding-left: 5vh;">
+                                        <li>(A∨B)∧(A∨C)∧(B∨C∨D)</li>
+                                        <li>(P∪Q)∩(Q∪R)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table  border="1px">
+                            <tr>
+                                <th colspan="2">Disjunctive Normal Form</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    A compound statement is in disjunctive normal form if it is obtained by operating OR among variables (negation of variables included) connected with ANDs. In terms of set operations, it is a compound statement obtained by Union among variables connected with Intersections.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>EXAMPLE</th>
+                                <td style="text-align: left; padding-bottom: 0; padding-top: 2.5vh;">
+                                    <ul style="list-style-type: square; padding-left: 5vh;">
+                                        <li>(A∧B)∨(A∧C)∨(B∧C∧D)</li>
+                                        <li>(P∩Q)∪(Q∩R)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="footer">
+                    
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,188 @@
+html
+{
+    overflow: hidden;
+    min-height: 100%;
+    margin: 0px;
+}
+
+body
+{
+    background-color: rgb(80, 80, 80);
+    color: rgb(255,255,255);
+    font-family: monospace;
+    min-height: 100%;
+    margin: 0px;
+}
+
+.grid-container
+{
+    grid-template-rows: auto auto auto;
+    min-height: 100%;
+    display: grid;
+    margin: 0px;
+}
+
+.header
+{
+    border-bottom: 1vh solid rgb(0, 180, 120);
+    background-color: rgb(0, 225, 150);
+    height: 10vh;
+}
+
+.header-nav-container
+{
+    height:0vh;
+}
+
+.header-nav-buttons
+{
+    background-color: rgba(0,0,0,0);
+    color: rgba(0,0,0,0);
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    font-size: 0vh;
+    height: 0px;
+    width:0px;
+}
+
+.header-text-h1
+{
+    margin-top: 0.5vh;
+    font-weight: 800;
+    margin-left: 1vh;
+    font-size: 5vh;
+}
+
+.header-text-h2
+{
+    margin-bottom: 1vh;
+    margin-left: 1.5vh;
+    font-weight: 800;
+    font-size: 2vh;
+}
+
+.body
+{
+    grid-template-columns: 175px auto;
+    min-height: 80vh;
+    display: grid;
+    padding: 0;
+}
+
+.sidebar
+{
+    background-color: rgb(100, 100, 100);
+}
+
+.sidebar-button
+{
+    background-image: linear-gradient(90deg,rgba(100, 100, 100, 0.85),rgb(100, 100, 100));
+    border-left: 0px solid rgb(0, 255, 170);
+    color: rgb(255, 255, 255);
+    transition: 0.15s linear;
+    border-bottom: 0px;
+    font-weight: 600;
+    border-right:0px;
+    border-top: 0px;
+    height: 40px;
+    width: 100%;
+}
+
+.sidebar-button:hover
+{
+    background-image: linear-gradient(90deg,rgba(0, 180, 120, 1),rgb(100, 100, 100));
+    border-left: 5px solid rgb(0, 255, 170);
+}
+
+.content-container
+{
+    background-image: url("Graphics/BG_Circuits.png");
+    background-color: #cccccc;
+    height: 100%;
+    width: 100%;
+}
+
+.footer
+{
+    border-top: 1vh solid rgb(0, 180, 120);
+    background-color: rgb(0, 225, 150);
+    height: 8vh;
+}
+
+@media only screen and (max-width: 700px) 
+{
+    .header
+    {
+        grid-template-rows: 6vh 4vh 5vh;
+        display: grid;
+        height: 15vh;
+    }
+    
+    .header-text-h1
+    {
+        text-align: center;
+        margin-left: 0vh;
+        margin-top: 1vh;
+        font-size: 5vh;
+    }
+
+    .header-text-h2
+    {
+        text-align: center;
+        margin-left: 0vh;
+        margin-top: 1vh;
+        font-size: 2vh;
+    }
+
+    .header-nav-container
+    {
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        display: grid;
+        width: 100%;
+        height: 5vh;
+    }
+    
+    .header-nav-buttons
+    {
+        background-color: rgb(0, 212, 142);
+        color: rgb(255, 255, 255);
+        border-bottom: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        font-weight: 750;
+        border-top: 0px;
+        font-size: 2vh;
+        height: 100%;
+        width: auto;
+    }
+    
+    .header-nav-buttons:focus
+    {
+        background-color: rgb(0, 255, 171);
+    }
+    
+    .body
+    {
+        grid-template-columns: 0px 100%;
+        min-height: 75vh;
+        display: grid;
+        padding: 0;
+    }
+
+    .content-container
+    {
+        background-image: url("Graphics/BG_Circuits.png");
+        background-color: #cccccc;
+        height: 100%;
+        width: 100%;
+    }
+
+    .footer
+    {
+        border-top: 1vh solid rgb(0, 180, 120);
+        background-color: rgb(0, 225, 150);
+        height: 8vh;
+    }
+}
