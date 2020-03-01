@@ -10,7 +10,7 @@ function load_calculator() {
      document.getElementById("c-container").innerHTML='<object style="width:inherit; height:inherit;" type="text/html" data="003_LC_Calculator.html" ></object>';
 }
 
-(function($, window, undefined) 
+(function($, window) 
 {
     var that = {};
     window.truth = that;
@@ -34,7 +34,7 @@ function load_calculator() {
 
         var key;
         // get a key, any key
-        $.each(symbols, function(k, v) 
+        $.each(symbols, function(k) 
         {
             key = k;
             return false;
@@ -71,10 +71,7 @@ function load_calculator() {
             displayCombos(val, sym, ast, truthCombos(sym));
         } 
         catch (e) 
-        {
-            out('Unable to parse expression. ' + e);
-            throw e;
-        }
+        { throw e; }
     }
 
     function displayCombos(expression, symbols, ast, combos) 
@@ -109,33 +106,21 @@ function load_calculator() {
         });
     }
 
-    function isBoolean(val) 
-    { return (val === true) || (val === false); }
-
-    function assertBoolean(val) 
-    {
-        if (! isBoolean(val)) 
-        { throw new SyntaxError('Unbound symbol: ' + val); }
-    }
-
     function evalExpr(ast, bindings) 
     {
         function evalSym(index) 
         {
             if ($.isArray(ast[index])) 
             { return evalExpr(ast[index], bindings); }
-            assertBoolean(bindings[ast[index]]);
             return bindings[ast[index]];
         }
 
-        if (!ast)
-        { throw new SyntaxError('Invalid expression: ' + ast); }
         if (! $.isArray(ast)) 
         { return bindings[ast]; }
         switch(ast[0]) 
         {
             case C_NOT:
-                return ! evalSym(1);
+                return !evalSym(1);
             case C_AND:
                 return evalSym(1) && evalSym(2);
             case C_NAND:
@@ -150,18 +135,13 @@ function load_calculator() {
                 return !evalSym(1) || evalSym(2);
             case C_BIC:
                 return ((evalSym(1) && evalSym(2)) || (!evalSym(1) && !evalSym(2)));
-            default:
-                throw new SyntaxError('Unrecognized operator: ' + ast[0]);
         }
     }
     that.evalExpr = evalExpr;
 
-    function out(val) 
-    { $('#combo').empty(); }
 
     function main() 
     {
-        var self = this;
         $('#expr').keyup(function() 
         {
             debug('keyup');
@@ -201,7 +181,7 @@ function load_calculator() {
             return symbol;
         }
 
-        function consumeToken(expected) 
+        function consumeToken() 
         {
             var curTok = getCurToken();
             debug('consumeToken', curTok, pos);
@@ -238,16 +218,6 @@ function load_calculator() {
                 case C_BIC:
                     return [consumeToken(), a1, bic_Expr()];
             }
-            
-            /*if (getCurToken() === C_OR) 
-            { return [consumeToken(), a1, or_Expr()]; }
-            else if (getCurToken() === C_NOR)
-            { return [consumeToken(), a1, nor_Expr()]; }
-            else if (getCurToken() === C_NAND)
-            { return [consumeToken(), a1, nand_Expr()]; }
-            else if (getCurToken() === C_IMP)
-            { return [consumeToken(), a1, imp_Expr()]; }*/
-            
             return a1;
         }
         
@@ -329,7 +299,6 @@ function load_calculator() {
                 debug(tokens);
                 debug(pos);
                 debug(tokens[pos]);
-                throw new SyntaxError('Could not consume all tokens. ' + 'Remaining tokens: ' + tokens.slice(pos, tokens.length));
             }
             return [ret, symbols];
         };
