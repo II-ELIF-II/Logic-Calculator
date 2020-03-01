@@ -113,6 +113,11 @@ body
 
 @media (pointer:none), (pointer:coarse)
 {
+    body
+    {
+        width: auto;
+    }
+    
     .header
     {
         grid-template-rows: 6vh 4vh 5vh;
