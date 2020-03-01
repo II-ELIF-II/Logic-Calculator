@@ -18,7 +18,15 @@ function load_calculator() {
     var SYMBOL = /[a-zA-Z]\w*/;
     var WHITESPACE = /^\s*$/;
     var DEBUG = true;
-
+    var C_AND = '^';
+    var C_NAND = '.';
+    var C_OR = '|';
+    var C_XOR = '!';
+    var C_NOR = '+';
+    var C_NOT = '~';
+    var C_IMP = '>';
+    var C_BIC = '#';
+    
     function truthCombos(symbols) 
     {
         if (! symbols) 
@@ -126,16 +134,22 @@ function load_calculator() {
         { return bindings[ast]; }
         switch(ast[0]) 
         {
-            case '&':
-                return evalSym(1) && evalSym(2);
-            case '^':
-                return (evalSym(1) || evalSym(2)) &&
-                       (!(evalSym(1) && evalSym(2)));
-            case '|':
-                return evalSym(1) || evalSym(2);
-            case '!':
-            case '~':
+            case C_NOT:
                 return ! evalSym(1);
+            case C_AND:
+                return evalSym(1) && evalSym(2);
+            case C_NAND:
+                return !evalSym(1) || !evalSym(2);
+            case C_OR:
+                return evalSym(1) || evalSym(2);
+            case C_XOR:
+                return (evalSym(1) || evalSym(2)) && (!(evalSym(1) && evalSym(2)));
+            case C_NOR:
+                return !evalSym(1) && !evalSym(2);
+            case C_IMP:
+                return !evalSym(1) || evalSym(2);
+            case C_BIC:
+                return ((evalSym(1) && evalSym(2)) || (!evalSym(1) && !evalSym(2)));
             default:
                 throw new SyntaxError('Unrecognized operator: ' + ast[0]);
         }
@@ -191,8 +205,6 @@ function load_calculator() {
         {
             var curTok = getCurToken();
             debug('consumeToken', curTok, pos);
-            if (expected && (curTok !== expected)) 
-            { throw new SyntaxError('Did not encounter expected token. Expected: "' + expected + '" Actual: "' + curTok + '".'); }
             pos++;
             return curTok;
         }
@@ -200,7 +212,7 @@ function load_calculator() {
         function expr() 
         {
             debug('expr', tokens, pos);
-            if ((getCurToken() === '!') || (getCurToken() === '~')) 
+            if (getCurToken() === C_NOT) 
             { return [consumeToken(), binary_Expr()]; }
             return binary_Expr();
         }
@@ -208,30 +220,85 @@ function load_calculator() {
         function binary_Expr() 
         { return xor_Expr(); }
 
-        function xor_Expr() 
-        {
-            var a1 = or_Expr();
-            if (getCurToken() === '^') 
-            { return [consumeToken(), a1, xor_Expr()]; }
-            return a1;
-        }
 
         function or_Expr() 
         {
             var a1 = and_Expr();
-            if (getCurToken() === '|') 
+            
+            switch(getCurToken()) 
+            {
+                case C_NAND:
+                    return [consumeToken(), a1, nand_Expr()];
+                case C_OR:
+                    return [consumeToken(), a1, or_Expr()];
+                case C_NOR:
+                    return [consumeToken(), a1, nor_Expr()];
+                case C_IMP:
+                    return [consumeToken(), a1, imp_Expr()];
+                case C_BIC:
+                    return [consumeToken(), a1, bic_Expr()];
+            }
+            
+            /*if (getCurToken() === C_OR) 
             { return [consumeToken(), a1, or_Expr()]; }
+            else if (getCurToken() === C_NOR)
+            { return [consumeToken(), a1, nor_Expr()]; }
+            else if (getCurToken() === C_NAND)
+            { return [consumeToken(), a1, nand_Expr()]; }
+            else if (getCurToken() === C_IMP)
+            { return [consumeToken(), a1, imp_Expr()]; }*/
+            
+            return a1;
+        }
+        
+        function xor_Expr() 
+        {
+            var a1 = or_Expr();
+            if (getCurToken() === C_XOR) 
+            { return [consumeToken(), a1, xor_Expr()]; }    
+            return a1;
+        }
+
+        function nor_Expr() 
+        {
+            var a1 = and_Expr();
+            if (getCurToken() === C_NOR) 
+            { return [consumeToken(), a1, nor_Expr()]; }
             return a1;
         }
 
         function and_Expr() 
         {
             var a1 = sub_Expr();
-            if (getCurToken() === '&') 
+            if (getCurToken() === C_AND) 
             { return [consumeToken(), a1, and_Expr()]; }
             return a1;
         }
 
+        function nand_Expr() 
+        {
+            var a1 = sub_Expr();
+            if (getCurToken() === C_NAND) 
+            { return [consumeToken(), a1, nand_Expr()]; }
+            return a1;
+        }
+        
+        function imp_Expr() 
+        {
+            var a1 = sub_Expr();
+            if (getCurToken() === C_IMP) 
+            { return [consumeToken(), a1, imp_Expr()]; }
+            return a1;
+        }
+        
+        function bic_Expr() 
+        {
+            var a1 = sub_Expr();
+            if (getCurToken() === C_BIC) 
+            { return [consumeToken(), a1, bic_Expr()]; }
+            return a1;
+        }
+        
         function sub_Expr() 
         {
             debug('subExpr', tokens, pos);
