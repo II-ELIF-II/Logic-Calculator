@@ -19,15 +19,15 @@ body
 
 /* Track */
 ::-webkit-scrollbar-track 
-{ background: #f1f1f1; }
+{ background: #200829; }
 
 /* Handle */
 ::-webkit-scrollbar-thumb 
-{ background: rgb(0, 225, 150); }
+{ background: #C00384; }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover 
-{ background: rgb(0, 180, 120) }
+{ background: #F10080 }
 
 table
 {
@@ -234,7 +234,7 @@ mark
     }
     
     ::-webkit-scrollbar 
-    { width: 4px; }
+    { width: 6px; }
 
     .toc
     {
