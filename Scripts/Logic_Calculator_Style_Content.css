@@ -31,8 +31,8 @@ body
 
 table
 {
-    box-shadow: 0px 0px 5px rgb(20, 20, 20);
-    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 5px #8B0D88;
+    border: 1px solid #F10080;
     border-collapse: collapse;
     text-transform: uppercase;
     margin-right: auto;
@@ -43,7 +43,7 @@ table
 
 th
 {
-    background-image: linear-gradient(45deg,rgb(0, 149, 99),rgb(0, 225, 150),rgb(0, 149, 99));
+    background-image: linear-gradient(45deg,#8B0D88,#C00384,#8B0D88);
     background-color: rgb(0, 225, 150);
     font-size: 2.5vh;
     padding: 2vh;
@@ -52,7 +52,7 @@ th
 
 td
 {
-    background-image: linear-gradient(45deg,rgb(80, 80, 80),rgb(100, 100, 100),rgb(80, 80, 80));
+    background-image: linear-gradient(45deg,#034EA2,#303A99,#034EA2);
     background-color: rgb(125, 125, 125);
     line-height: 150%;
     font-size: 2.5vh;
@@ -62,10 +62,10 @@ td
 
 mark
 {
-    background-color: rgba(0, 180, 120, 0.5);
-    border-right: 2px solid rgb(0, 255, 170);
-    border-left: 2px solid rgb(0, 255, 170);
-    box-shadow: 0px 0px 5px rgb(0, 225, 150);
+    background-color: rgba(139, 13, 136, 0.5);
+    border-right: 2px solid #F10080;
+    border-left: 2px solid #F10080;
+    box-shadow: 0px 0px 5px #F10080;
     color: rgb(255, 255, 255);
     padding: 0vh 1vh 0vh 1vh;
 }
@@ -83,7 +83,7 @@ mark
 
 .toc-link
 {
-    color: rgb(0, 255, 170);
+    color: #F10080;
     text-decoration: none;
     height: 30px;
     width: 100%;
@@ -104,15 +104,15 @@ mark
 
 .body-container
 {
-    box-shadow: 0px 0px 10px 0px rgb(0, 180, 120);
+    box-shadow: 0px 0px 10px 0px #F10080;
     grid-template-rows: 8vh auto 8vh;
     display: grid;
 }
 
 .header
 {
-    border-bottom: 1vh solid rgb(0, 180, 120);
-    background-color: rgb(100, 100, 100);
+    background-image: linear-gradient(-45deg,#200829,#290C34,#200829);
+    border-bottom: 1vh solid #F10080;
     z-index: 1;
     padding: 0;
 }
@@ -126,15 +126,15 @@ mark
 
 .body
 {
-    background-image: linear-gradient(180deg,rgb(47, 19, 62),rgb(37, 22, 72),rgb(23, 20, 31),rgb(14, 10, 25));
-    background-color: rgb(80, 80, 80);
+    background-image: linear-gradient(180deg,#034EA2,#5E2390);
     padding: 0;
 }
 
 .body-header
 {
-    border-bottom: 1vh solid rgb(0, 180, 120);
-    border-top: 0.5vh solid rgb(0, 180, 120);
+    background-image: linear-gradient(-45deg,#200829,#290C34,#200829);
+    border-bottom: 1vh solid #F10080;
+    border-top: 0.5vh solid #F10080;
     background-color: rgb(100, 100, 100);
     height: 6vh;
 }
@@ -148,10 +148,9 @@ mark
 
 .body-text
 {
-    background-image: linear-gradient(-45deg,rgb(65, 65, 65),rgb(93, 93, 93));
-    box-shadow: 0px 0px 10px rgb(20, 20, 20);
-    background-color: rgb(100, 100, 100);
-    border: 1px solid rgb(0, 0, 0);
+    background-image: linear-gradient(-45deg,#200829,#290C34,#200829);
+    box-shadow: 0px 0px 10px #141414;
+    border: 1px solid #8B0D88;
     text-align: justify;
     line-height: 200%;
     font-size: 2.5vh;
@@ -171,7 +170,7 @@ mark
 .form-calculator
 {
     grid-template-columns: 75% auto;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid #F10080;
     display: grid;
 }
 
@@ -192,7 +191,7 @@ mark
 
 .input-clear
 {
-    background-color: rgb(0, 225, 150);
+    background-image: linear-gradient(-45deg,#C00384,#F10080,#C00384);
     color: rgb(255, 255, 255);
     border-bottom: 0px;
     border-right: 0px;
@@ -201,26 +200,10 @@ mark
     font-size: 3vh;
 }
 
-.output
-{
-    border-bottom: 1vw solid rgb(0, 180, 120);
-    border-top: 0.5vw solid rgb(0, 180, 120);
-    background-color: rgb(100, 100, 100);
-    margin-top: 0vw;
-    height: 6vh;
-    width: 100%;
-}
-
-.output-title
-{
-    margin-left: 2vw;
-    font-size: 5vh;
-}
-
 .footer
 {
-    border-top: 1vw solid rgb(0, 180, 120);
-    background-color: rgb(100, 100, 100);
+    background-image: linear-gradient(-45deg,#200829,#290C34,#200829);
+    border-top: 1vw solid #F10080;
     padding: 0;
 }
 
@@ -299,13 +282,6 @@ mark
     .body-text
     {
         font-size: 3vw;
-    }
-    
-    .output-title
-    {
-        text-align: center;
-        margin-left: 0vw;
-        font-size: 5vw;
     }
 
     .input-clear
