@@ -31,9 +31,10 @@ body
 
 table
 {
+    box-shadow: 0px 0px 5px rgb(20, 20, 20);
+    border: 1px solid rgb(0, 0, 0);
     border-collapse: collapse;
     text-transform: uppercase;
-    border: 1px solid rgb(0, 0, 0);
     margin-right: auto;
     text-align: center;
     margin-left: auto;
@@ -42,6 +43,7 @@ table
 
 th
 {
+    background-image: linear-gradient(45deg,rgb(0, 149, 99),rgb(0, 225, 150),rgb(0, 149, 99));
     background-color: rgb(0, 225, 150);
     font-size: 2.5vh;
     padding: 2vh;
@@ -50,7 +52,9 @@ th
 
 td
 {
+    background-image: linear-gradient(45deg,rgb(80, 80, 80),rgb(100, 100, 100),rgb(80, 80, 80));
     background-color: rgb(125, 125, 125);
+    line-height: 150%;
     font-size: 2.5vh;
     padding: 1.5vh;
     height: 4vh;
@@ -61,6 +65,7 @@ mark
     background-color: rgba(0, 180, 120, 0.5);
     border-right: 2px solid rgb(0, 255, 170);
     border-left: 2px solid rgb(0, 255, 170);
+    box-shadow: 0px 0px 5px rgb(0, 225, 150);
     color: rgb(255, 255, 255);
     padding: 0vh 1vh 0vh 1vh;
 }
@@ -68,10 +73,10 @@ mark
 .toc
 {
     border: 0px solid rgb(0, 0, 0);
-    padding-top: 1vh;
-    padding-left: 5vh;
-    padding-right: 1vh;
     padding-bottom: 0vh;
+    padding-right: 1vh;
+    padding-left: 5vh;
+    padding-top: 1vh;
     font-size: 2.5vh;
     text-align: left;
 }
@@ -99,6 +104,7 @@ mark
 
 .body-container
 {
+    box-shadow: 0px 0px 10px 0px rgb(0, 180, 120);
     grid-template-rows: 8vh auto 8vh;
     display: grid;
 }
@@ -107,6 +113,7 @@ mark
 {
     border-bottom: 1vh solid rgb(0, 180, 120);
     background-color: rgb(100, 100, 100);
+    z-index: 1;
     padding: 0;
 }
 
@@ -119,6 +126,7 @@ mark
 
 .body
 {
+    background-image: linear-gradient(180deg,rgb(47, 19, 62),rgb(37, 22, 72),rgb(23, 20, 31),rgb(14, 10, 25));
     background-color: rgb(80, 80, 80);
     padding: 0;
 }
@@ -140,9 +148,12 @@ mark
 
 .body-text
 {
+    background-image: linear-gradient(-45deg,rgb(65, 65, 65),rgb(93, 93, 93));
+    box-shadow: 0px 0px 10px rgb(20, 20, 20);
     background-color: rgb(100, 100, 100);
     border: 1px solid rgb(0, 0, 0);
     text-align: justify;
+    line-height: 200%;
     font-size: 2.5vh;
     width: inherit;
     padding: 2vh;

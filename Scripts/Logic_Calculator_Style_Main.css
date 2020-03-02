@@ -24,8 +24,10 @@ body
 
 .header
 {
-    border-bottom: 1vh solid rgb(0, 180, 120);
-    background-color: rgb(0, 225, 150);
+    border-bottom: 1vh solid rgb(0, 225, 150);
+    box-shadow: 0px 0px 10px rgb(0, 200, 135);
+    background-color: rgb(0, 209, 139);
+    z-index: 5;
     height: 10vh;
 }
 
@@ -73,12 +75,14 @@ body
 
 .sidebar
 {
+    background-image: linear-gradient(180deg,rgb(47, 19, 62),rgb(37, 22, 72),rgb(23, 20, 31),rgb(14, 10, 25));
     background-color: rgb(100, 100, 100);
 }
 
 .sidebar-button
 {
-    background-image: linear-gradient(90deg,rgba(100, 100, 100, 0.85),rgb(100, 100, 100));
+    background-image: linear-gradient(90deg,rgba(0, 180, 120, 0.8),rgba(0, 180, 120, 0.5),rgba(0, 180, 120, 0.25),rgba(0, 180, 120, 0.1));
+    background-color: rgba(0,0,0,0);
     border-left: 0px solid rgb(0, 255, 170);
     color: rgb(255, 255, 255);
     transition: 0.15s linear;
@@ -92,22 +96,22 @@ body
 
 .sidebar-button:hover
 {
-    background-image: linear-gradient(90deg,rgba(0, 180, 120, 1),rgb(100, 100, 100));
+    background-image: linear-gradient(90deg,rgba(0, 180, 120, 0.8),rgba(0, 180, 120, 0.8),rgba(0, 180, 120, 0.5),rgba(0, 180, 120, 0.25));
     border-left: 5px solid rgb(0, 255, 170);
 }
 
 .content-container
 {
-    background-image: url("Graphics/BG_Circuits.png");
-    background-color: #cccccc;
+    background-image: url("Background.png");
     height: 100%;
     width: 100%;
 }
 
 .footer
 {
-    border-top: 1vh solid rgb(0, 180, 120);
-    background-color: rgb(0, 225, 150);
+    box-shadow: 0px 0px 10px rgb(0, 200, 135);
+    border-top: 1vh solid rgb(0, 225, 150);
+    background-color: rgb(0, 209, 139);
     height: 8vh;
 }
 
@@ -175,19 +179,9 @@ body
         display: grid;
         padding: 0;
     }
-
-    .content-container
-    {
-        background-image: url("Graphics/BG_Circuits.png");
-        background-color: #cccccc;
-        height: 100%;
-        width: 100%;
-    }
-
+    
     .footer
     {
-        border-top: 1vh solid rgb(0, 180, 120);
-        background-color: rgb(0, 225, 150);
-        height: 8vh;
+        height: 4vh;
     }
 }
