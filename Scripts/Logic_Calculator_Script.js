@@ -263,7 +263,7 @@ function load_calculator() {
         
         function bic_Expr() 
         {
-            var a1 = sub_Expr();
+            var a1 = or_Expr();
             if (getCurToken() === C_BIC) 
             { return [consumeToken(), a1, bic_Expr()]; }
             return a1;
