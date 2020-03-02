@@ -216,7 +216,6 @@ mark
     
     th
     {
-        background-color: rgb(0, 225, 150);
         font-size: 2.5vw;
         padding: 0.5vw;
         height: 10vw;
@@ -224,7 +223,6 @@ mark
 
     td
     {
-        background-color: rgb(125, 125, 125);
         font-size: 2vw;
         padding: 0.5vw;
         height: 10vw;
@@ -250,7 +248,6 @@ mark
 
     .header
     {
-        background-color: rgb(100, 100, 100);
         padding: 0;
     }
     
@@ -263,7 +260,6 @@ mark
     
     .body
     {
-        background-color: rgb(80, 80, 80);
         padding: 0;
     }
 
@@ -286,8 +282,6 @@ mark
 
     .input-clear
     {
-        background-color: rgb(0, 225, 150);
-        color: rgb(255, 255, 255);
         border-bottom: 0px;
         border-right: 0px;
         border-left: 0px;
@@ -297,7 +291,6 @@ mark
     
     .footer
     {
-        background-color: rgb(100, 100, 100);
         padding: 0;
     }
 }
