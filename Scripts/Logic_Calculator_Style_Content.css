@@ -85,13 +85,13 @@ mark
 {
     color: #F10080;
     text-decoration: none;
-    height: 30px;
+    font-weight: 800;
     width: 100%;
 }
 
 .toc-link:hover
 {
-    color: rgb(255, 255, 255);
+    color: #FFFFFF;
 }
 
 .grid-container
