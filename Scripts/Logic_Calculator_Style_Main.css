@@ -121,7 +121,7 @@ body
 {
     background-image: url("Background.png");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     height: 100%;
     width: 100%;
 }
@@ -203,7 +203,7 @@ body
     
     .footer
     {
-        height: 6vh;
+        height: 8vh;
         z-index: 5;
     }
 }

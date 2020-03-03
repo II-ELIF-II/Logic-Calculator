@@ -273,6 +273,7 @@ mark
     .grid-container
     {
         grid-template-columns: 0% 100% 0%;
+        height: 100%;
     }
 
     .header
