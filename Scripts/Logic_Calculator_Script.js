@@ -1,17 +1,17 @@
 function load_home() {
-     document.getElementById("c-container").innerHTML='<object style="width:inherit; height:inherit;" type="text/html" data="001_LC_Home.html" ></object>';
+     document.getElementById("c-container").innerHTML='<object style="width:inherit; height:100%;" type="text/html" data="001_LC_Home.html" ></object>';
 }
 
 function load_tutorial() {
-     document.getElementById("c-container").innerHTML='<object style="width:inherit; height:inherit;" type="text/html" data="002_LC_Tutorial.html" ></object>';
+     document.getElementById("c-container").innerHTML='<object style="width:inherit; height:100%;" type="text/html" data="002_LC_Tutorial.html" ></object>';
 }
 
 function load_tests() {
-     document.getElementById("c-container").innerHTML='<object style="width:inherit; height:inherit;" type="text/html" data="003_LC_Tests.html" ></object>';
+     document.getElementById("c-container").innerHTML='<object style="width:inherit; height:100%;" type="text/html" data="003_LC_Tests.html" ></object>';
 }
     
 function load_calculator() {
-     document.getElementById("c-container").innerHTML='<object style="width:inherit; height:inherit;" type="text/html" data="004_LC_Calculator.html" ></object>';
+     document.getElementById("c-container").innerHTML='<object style="width:inherit; height:100%;" type="text/html" data="004_LC_Calculator.html" ></object>';
 }
 
 (function($, window) 
