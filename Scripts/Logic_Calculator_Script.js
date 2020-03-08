@@ -21,10 +21,10 @@ function quiz(ques)
     x = document.getElementById("test-text").value;
     if(ques=1)
     {
-        if (x==="True") 
-        { text = "Input not valid"; } 
+        if (x=='T') 
+        { text = "Input OK"; } 
         else 
-        { text = "Input OK"; }
+        { text = "Input not valid"; }
     }
     document.getElementById("answer").innerHTML = text;
 }

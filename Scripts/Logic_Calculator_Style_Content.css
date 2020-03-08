@@ -324,6 +324,38 @@ mark
         height: 7vw;
     }
     
+    .test-header
+    {
+        background-color: #F10080;
+        padding: 0vh 1vh;
+    }
+
+    .test-body
+    {
+        background-color: #290C34;
+        text-align: justify;
+        padding: 0vh 2vh;
+    }
+
+    .text-input
+    {
+        background-color: #8B0D88;
+        padding: 0vh 2vh;
+    }
+
+    .test-content
+    {
+        padding: 0;
+        margin-bottom: -2vh;
+        align-items:stretch;
+        font-size: 2vh;
+    }
+
+    .test-text
+    {
+        width:10%;
+    }
+    
     .body-header-text
     {
         text-align: center;
