@@ -136,9 +136,13 @@ body
 
 @media (pointer:none), (pointer:coarse)
 {
-    body
+    html
     {
         min-width: 100px;
+    }
+    
+    body
+    {
         width: auto;
         z-index: 5;
     }
