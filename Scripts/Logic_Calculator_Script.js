@@ -25,8 +25,9 @@ function quiz(ques)
         { text = "Input OK"; } 
         else 
         { text = "Input not valid"; }
+        document.getElementById("answer").innerHTML = text;
     }
-    document.getElementById("answer").innerHTML = text;
+    
 }
 
 (function($, window) 
