@@ -140,26 +140,6 @@ mark
     padding: 0;
 }
 
-.button
-{
-    background-color: #303A99;
-    color: rgb(255, 255, 255);
-    transition: 0.15s linear;
-    border-bottom: 0px;
-    border-right: 0px;
-    border-left: 0px;
-    font-size: 2.5vh;
-    border-top: 0px;
-    height: 100%;
-    width: 100%;
-}
-
-.button:hover
-{
-    background-color: #034EA2;
-    transition: 0.15s linear;
-}
-
 .body-header
 {
     background-image: linear-gradient(-45deg,#200829,#290C34,#200829);
@@ -186,6 +166,52 @@ mark
     width: inherit;
     padding: 2vh;
     margin: 2vh;
+}
+
+.body-test
+{
+    background-image: linear-gradient(-45deg,#200829,#290C34,#200829);
+    box-shadow: 0px 0px 10px #141414;
+    border: 1px solid #8B0D88;
+    text-align: justify;
+    line-height: 200%;
+    font-size: 2.5vh;
+    width: inherit;
+    padding: 0vh;
+    padding-bottom: 0;
+    margin: 2vh;
+}
+
+.test-header
+{
+    background-color: #F10080;
+    padding: 0vh 1vh;
+}
+
+.test-body
+{
+    background-color: #290C34;
+    text-align: justify;
+    padding: 0vh 2vh;
+}
+
+.text-input
+{
+    background-color: #8B0D88;
+    padding: 0vh 2vh;
+}
+
+.test-content
+{
+    padding: 0;
+    margin-bottom: -2vh;
+    align-items:stretch;
+    font-size: 2vh;
+}
+
+.test-text
+{
+    width:10%;
 }
 
 .body-calculator

@@ -14,6 +14,23 @@ function load_calculator() {
      document.getElementById("c-container").innerHTML='<object style="width:inherit; height:100%;" type="text/html" data="004_LC_Calculator.html" ></object>';
 }
 
+function quiz(ques) 
+{
+    var x, text;
+
+    // Get the value of the input field with id="numb"
+    x = document.getElementById("test-text").value;
+    if(ques=1)
+    {
+    // If x is Not a Number or less than one or greater than 10
+        if (x==="True") 
+        { text = "Input not valid"; } 
+        else 
+        { text = "Input OK"; }
+    }
+    document.getElementById("answer").innerHTML = text;
+}
+
 (function($, window) 
 {
     var that = {};

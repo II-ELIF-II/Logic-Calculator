@@ -13,37 +13,17 @@
                 </div>
                 <div class="body">
                     <div class="body-text">
-                        <table  border="1px">
-                            <tr>
-                                <th colspan="3" style="text-align: left;">1) QUESTION</th>
-                                <th style=" width:40%; text-align: center;">WRONG/CORRECT</th>
-                            </tr>
-                            <tr>
-                                <td colspan="4" style="text-align: justify;">
-                                    TEST
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="width:10%;">A</th>
-                                <td style="padding: 0; width:40%;">
-                                    <button class="button">Answer A</button>
-                                </td>
-                                <th style="width:10%;">C</th>
-                                <td style="padding: 0; width:40%;">
-                                    <button class="button">Answer C</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>B</th>
-                                <td style="padding: 0;">
-                                    <button class="button">Answer B</button>
-                                </td>
-                                <th>D</th>
-                                <td style="padding: 0;">
-                                    <button class="button">Answer D</button>
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="body-test">
+                            <div class="test-header">QUESTION 1)</div>
+                            <div class="test-content">
+                                <div class="test-body">test</div>
+                                <form class="text-input">
+                                    <input id="test-text" class="test-text" type="text" required>
+                                    <input type="submit" onclick="quiz(1)">
+                                    <p id="answer"></p>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="footer">
